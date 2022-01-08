@@ -20,8 +20,8 @@ BoundedField::BoundedField(float cellSize, float cellHeight)
 BoundedField::BoundedField(const float * const gridBoundsMin, const float * const gridBoundsMax, float cellSize, float cellHeight)
 {
 	// 这里没有做非空判断,假设传入都是有效值
-	memccpy(boundsMin, gridBoundsMin, 0, sizeof(getBoundsMin));
-	memccpy(boundsMax, gridBoundsMax, 0, sizeof(getBoundsMax));
+	memccpy(boundsMin, gridBoundsMin, 0, sizeof(boundsMin));
+	memccpy(boundsMax, gridBoundsMax, 0, sizeof(boundsMax));
 
 	this->cellSize = std::fmax(cellSize, FLT_MIN);
 	this->cellHeight = std::fmax(cellHeight, FLT_MAX);

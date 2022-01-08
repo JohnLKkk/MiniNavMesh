@@ -33,7 +33,16 @@
     <ClInclude Include="HeightSpan.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="IContourAlgorithm.h">
+    <ClInclude Include="IntermediateData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Algorithm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenHeightField.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenHeightSpan.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -51,6 +60,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Geometry.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenHeightSpan.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

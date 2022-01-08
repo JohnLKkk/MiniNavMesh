@@ -115,7 +115,10 @@
     <ClInclude Include="ContourSet.h" />
     <ClInclude Include="Geometry.h" />
     <ClInclude Include="HeightSpan.h" />
-    <ClInclude Include="IContourAlgorithm.h" />
+    <ClInclude Include="Algorithm.h" />
+    <ClInclude Include="IntermediateData.h" />
+    <ClInclude Include="OpenHeightField.h" />
+    <ClInclude Include="OpenHeightSpan.h" />
     <ClInclude Include="Region.h" />
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +127,7 @@
     <ClCompile Include="ContourSet.cpp" />
     <ClCompile Include="Geometry.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="OpenHeightSpan.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

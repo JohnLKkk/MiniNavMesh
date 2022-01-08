@@ -11,6 +11,7 @@ using std::vector;
 class Contour
 {
 public:
+	Contour(){}
 	Contour(int regionID, vector<int> rawVerts, vector<int> verts);
 	~Contour() {
 		delete[] rawVerts;
