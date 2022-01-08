@@ -45,6 +45,15 @@
     <ClInclude Include="OpenHeightSpan.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="NavmeshGenerator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Builder.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockHeightfield.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -63,6 +72,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="OpenHeightSpan.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Builder.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -110,19 +110,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BlockHeightfield.h" />
     <ClInclude Include="BoundedField.h" />
+    <ClInclude Include="Builder.h" />
     <ClInclude Include="Contour.h" />
     <ClInclude Include="ContourSet.h" />
     <ClInclude Include="Geometry.h" />
     <ClInclude Include="HeightSpan.h" />
     <ClInclude Include="Algorithm.h" />
     <ClInclude Include="IntermediateData.h" />
+    <ClInclude Include="NavmeshGenerator.h" />
     <ClInclude Include="OpenHeightField.h" />
     <ClInclude Include="OpenHeightSpan.h" />
     <ClInclude Include="Region.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BoundedField.cpp" />
+    <ClCompile Include="Builder.cpp" />
     <ClCompile Include="Contour.cpp" />
     <ClCompile Include="ContourSet.cpp" />
     <ClCompile Include="Geometry.cpp" />
