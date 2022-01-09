@@ -58,7 +58,7 @@ private:
 	// value:当前gridIndex的最低位置的span,如果当前cell没有span,则为nullptr
 	unordered_map<int, HeightSpan*> spans;
 
-
+public:
 	class Iterator
 	{
 	public:

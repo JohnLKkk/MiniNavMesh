@@ -64,7 +64,7 @@ public:
 	检测每个Polygon的坡度,如果低于指定的最大坡度,则认为可以行走(设置SpanFlags.WALKABLE)。
 	@return 形式为[polyFlag0, polyFlag1, ... polyFlagN]
 	*/
-	int* genMeshWalkableFlags(int vertNums, const float *const vertiecs, int indNums, const int *const indices);
+	int* genMeshWalkableFlags(int vertNums, const float *const vertices, int indNums, const int *const indices);
 private:
 
 	// 一组配置参数
@@ -95,6 +95,45 @@ private:
 	// 仅仅用于初始化Heightfield阶段
 	const float cellHeight;
 
+
+	/*
+	归一化指定的法线,并返回y分量。
+	*/
+	static float getNormalY(float *const v);
+
+	/*
+	返回UxV的结果。
+	*/
+	static float*const cross(const float* const u, const float* const v, float *const out);
+
+	/*
+	计算vertA-vertB的结果。
+	*/
+	static float*const subtract(int pVertA, int pVertB, const float* const vertices, float *const out);
+
+	/*
+	将值限制在指定范围内。
+	*/
+	static int clamp(int value, int minimum, int maximum) {
+		return (value < minimum ? minimum : (value > maximum ? maximum : value));
+	};
+
+	/*
+	体素化多边形,并将生成的span添加到heightfield中。
+	*/
+	static void voxelizePolygon(int polyIndex, const float *const vertices, const int *const indices, int polyFlags, float inverseCellSize, float inverseCellHeight, BlockHeightfield &inoutField);
+
+	static int clipPoly(const float *const in, int inputVertCount, float *const out, float pnx, float pnz, float pd);
+
+	/*
+	剔除那些无法被遍历的“可跨越span”。
+	*/
+	void genLowHeightSpans(BlockHeightfield & field);
+
+	/*
+	剔除那些表示Ledge(即坡度起伏的部分超过指定参数定义的高度,则被认为是不合理的span，不允许在这上面进行遍历)。
+	*/
+	void genLedgeSpans(BlockHeightfield & field);
 };
 
 #endif // !_BUILDER_H_
