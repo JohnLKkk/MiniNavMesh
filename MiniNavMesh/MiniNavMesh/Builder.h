@@ -4,6 +4,17 @@
 #include "BlockHeightfield.h"
 #include <cmath>
 #define M_PI 3.14159265358979323846
+
+/*
+定义用于Heightfield的标记。
+*/
+enum SpanFlags
+{
+	// span的上表面(顶部最大值)被认为是可遍历的,否则,没有添加该标记的span被认为是不可遍历的障碍物。
+	WALKABLE = 1
+};
+
+
 /*
 这个类用于将体素化后的场景信息，其实心voxel(受阻部分)记录为一组span，并根据“可跨越的span”生成最终有效的OpenHeightField。
 作者:JohnKkk
@@ -44,6 +55,7 @@ public:
 	/*
 	从提供的源几何数据生成BlockHeightfield,BlockHeightfield将表示源几何数据“受阻”的
 	体素化场景。
+	SpanFlags.WALKABLE将应用于顶部可遍历的所有span。
 	*/
 	BlockHeightfield* build(const float *const vertices, const int *const indices);
 private:
