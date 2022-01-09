@@ -1,5 +1,7 @@
 #pragma once
 #ifndef _OPENHEIGHTFIELD_H_
+#define _OPENHEIGHTFIELD_H_
+
 #include "BoundedField.h"
 
 /*

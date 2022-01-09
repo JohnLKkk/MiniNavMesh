@@ -1,5 +1,7 @@
 #pragma once
 #ifndef _CONTOURSET_H_
+#define _CONTOURSET_H_
+
 #include "BoundedField.h"
 #include "Contour.h"
 

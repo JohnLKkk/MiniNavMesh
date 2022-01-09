@@ -1,5 +1,6 @@
 #pragma once
 #ifndef _NAVMESHGENERATOR_H_
+#define _NAVMESHGENERATOR_H_
 
 /*
 用于生成任意几何体(只需要提供Positions与Indices数据即可）的潜在可遍历表面（导航网格数据），

@@ -1,5 +1,6 @@
 #pragma once
 #ifndef _INTERMEDIATEDATA_H_
+#define _INTERMEDIATEDATA_H_
 
 /*
 保存生成NavMesh相关的中间数据的类，当此数据与原几何数据（即输入场景数据）相结合时，表示构建最终的NavMesh的过程。

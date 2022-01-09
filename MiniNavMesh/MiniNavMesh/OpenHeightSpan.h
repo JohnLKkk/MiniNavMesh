@@ -1,5 +1,6 @@
 #pragma once
 #ifndef _OPENHEIGHTSPAN_H_
+#define _OPENHEIGHTSPAN_H_
 
 /*
 OpenHeightSpan用于记录OpenHeightField中每个cell的可跨越span。

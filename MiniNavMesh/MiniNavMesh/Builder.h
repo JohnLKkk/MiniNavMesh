@@ -1,5 +1,6 @@
 #pragma once
 #ifndef _BUILDER_H_
+#define _BUILDER_H_
 
 #include "BlockHeightfield.h"
 #include <cmath>
@@ -23,7 +24,7 @@ enum SpanFlags
 class BlockHeightfieldBuilder
 {
 public:
-	BlockHeightfieldBuilder(float cellSize = 1, float cellHeight = 1, int minTraversableHeight = 1, int maxTraversableStep = 1, float maxTraversableSlope = 0.4f, bool clipLedges = false):cellSize(cellSize), cellHeight(cellHeight), minTraversableHeight(minTraversableHeight), maxTraversableStep(maxTraversableStep) {
+	BlockHeightfieldBuilder(float cellSize = 1, float cellHeight = 1, int minTraversableHeight = 1, int maxTraversableStep = 1, float maxTraversableSlope = 0.4f, bool clipLedges = false):cellSize(cellSize), cellHeight(cellHeight), minTraversableHeight(minTraversableHeight), maxTraversableStep(maxTraversableStep), clipLedges(0) {
 		maxTraversableSlope = std::fmin(85, std::fmax(0, maxTraversableSlope));
 
 
@@ -57,7 +58,13 @@ public:
 	体素化场景。
 	SpanFlags.WALKABLE将应用于顶部可遍历的所有span。
 	*/
-	BlockHeightfield* build(const float *const vertices, const int *const indices);
+	BlockHeightfield* build(int vertNums, const float * const vertices, int indNums, const int * const indices);
+
+	/*
+	检测每个Polygon的坡度,如果低于指定的最大坡度,则认为可以行走(设置SpanFlags.WALKABLE)。
+	@return 形式为[polyFlag0, polyFlag1, ... polyFlagN]
+	*/
+	int* genMeshWalkableFlags(int vertNums, const float *const vertiecs, int indNums, const int *const indices);
 private:
 
 	// 一组配置参数

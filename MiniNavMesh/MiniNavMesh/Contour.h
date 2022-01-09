@@ -1,5 +1,7 @@
 #pragma once
 #ifndef _CONTOUR_H_
+#define _CONTOUR_H_
+
 #include <vector>
 using std::vector;
 
@@ -11,7 +13,7 @@ using std::vector;
 class Contour
 {
 public:
-	Contour(){}
+	Contour():regionID(-1){}
 	Contour(int regionID, vector<int> rawVerts, vector<int> verts);
 	~Contour() {
 		delete[] rawVerts;

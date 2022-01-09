@@ -125,6 +125,7 @@
     <ClInclude Include="Region.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BlockHeightfield.cpp" />
     <ClCompile Include="BoundedField.cpp" />
     <ClCompile Include="Builder.cpp" />
     <ClCompile Include="Contour.cpp" />

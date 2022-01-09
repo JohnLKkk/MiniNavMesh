@@ -1,5 +1,8 @@
 #pragma once
 #ifndef _BLOCKHEIGHTFIELD_H_
+#define _BLOCKHEIGHTFIELD_H_
+
+
 #include "BoundedField.h"
 #include "HeightSpan.h"
 #include <unordered_map>
@@ -144,7 +147,7 @@ public:
 	/*
 	返回grid中指定(widthIndex,depthIndex)处的cell的首个span。
 	*/
-	HeightSpan* getData(int widhtIndex, int depthIndex)const { return spans[gridIndex(widhtIndex, depthIndex)]; };
+	HeightSpan* getData(int widhtIndex, int depthIndex) { return spans[gridIndex(widhtIndex, depthIndex)]; };
 
 	/*
 	判断Heightfield的有效状态。

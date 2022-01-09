@@ -1,5 +1,7 @@
 #pragma once
 #ifndef _HEIGHTSPANE_H_
+#define _HEIGHTSPANE_H_
+
 /*
 Spans表示一个或多个连续体素信息，而HeightSpan表示当前Cell(以柱状方式去理解,所以称为HeightSpan)内的Span。
 HeightField是由一系列HeightSpan组成的。

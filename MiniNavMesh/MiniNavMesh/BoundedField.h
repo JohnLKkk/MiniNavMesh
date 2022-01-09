@@ -1,5 +1,6 @@
 #pragma once
 #ifndef _BOUNDEDFIELD_H_
+#define _BOUNDEDFIELD_H_
 
 /*
 用于描述基于Grid的轴对齐包围盒(AABB)。
@@ -71,6 +72,7 @@ protected:
 	*/
 	void resetBounds();
 
+public:
 	/*
 	设置Bounds为指定边界。
 	*/

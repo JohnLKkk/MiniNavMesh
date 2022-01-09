@@ -1,5 +1,6 @@
 #pragma once
 #ifndef _GEOMETRY_H_
+#define _GEOMETRY_H_
 
 /*
 描述Geometry的结构，实际上这里仅提供了几个数学计算全局函数，并没有包装任何Mesh数据。

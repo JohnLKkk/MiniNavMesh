@@ -20,8 +20,8 @@ BoundedField::BoundedField(float cellSize, float cellHeight)
 BoundedField::BoundedField(const float * const gridBoundsMin, const float * const gridBoundsMax, float cellSize, float cellHeight)
 {
 	// 这里没有做非空判断,假设传入都是有效值
-	memccpy(boundsMin, gridBoundsMin, 0, sizeof(boundsMin));
-	memccpy(boundsMax, gridBoundsMax, 0, sizeof(boundsMax));
+	memcpy(boundsMin, gridBoundsMin, sizeof(boundsMin));
+	memcpy(boundsMax, gridBoundsMax, sizeof(boundsMax));
 
 	this->cellSize = std::fmax(cellSize, FLT_MIN);
 	this->cellHeight = std::fmax(cellHeight, FLT_MAX);
@@ -92,15 +92,15 @@ void BoundedField::setBounds(float xmin, float ymin, float zmin, float xmax, flo
 void BoundedField::setBounds(const float * const mins, const float * const maxs)
 {
 	if (!mins || !maxs)return;
-	memccpy(boundsMin, mins, 0, sizeof(boundsMin));
-	memccpy(boundsMax, maxs, 0, sizeof(boundsMax));
+	memcpy(boundsMin, mins, sizeof(boundsMin));
+	memcpy(boundsMax, maxs, sizeof(boundsMax));
 	calculateWidthDepth();
 }
 
 void BoundedField::setBoundsMax(const float * const values)
 {
 	if (values) {
-		memccpy(boundsMax, values, 0, sizeof(boundsMax));
+		memcpy(boundsMax, values, sizeof(boundsMax));
 		calculateWidthDepth();
 	}
 }
@@ -108,7 +108,7 @@ void BoundedField::setBoundsMax(const float * const values)
 void BoundedField::setBoundsMin(const float * const values)
 {
 	if (values) {
-		memccpy(boundsMin, values, 0, sizeof(boundsMin));
+		memcpy(boundsMin, values, sizeof(boundsMin));
 		calculateWidthDepth();
 	}
 }

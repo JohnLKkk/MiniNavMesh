@@ -1,5 +1,7 @@
 #pragma once
 #ifndef _REGION_H_
+#define _REGION_H_
+
 #include <vector>
 #include <iostream>
 

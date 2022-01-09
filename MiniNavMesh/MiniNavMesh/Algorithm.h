@@ -1,5 +1,7 @@
 #pragma once
 #ifndef _ALGORITHM_H_
+#define _ALGORITHM_H_
+
 
 #include <vector>
 using std::vector;

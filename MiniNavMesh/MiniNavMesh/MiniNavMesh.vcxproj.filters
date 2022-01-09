@@ -77,5 +77,8 @@
     <ClCompile Include="Builder.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="BlockHeightfield.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
